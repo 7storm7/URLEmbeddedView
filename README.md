@@ -17,7 +17,7 @@ Just add the dependency to your `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'com.github.nguyencse:urlembeddedview:1.0.2'
+    implementation 'com.github.storm:urlembeddedview:1.0.2'
 }
 ```
 
@@ -30,7 +30,7 @@ And DO NOT forget to add internet permission in manifest if already not present
 ### Usage
    In xml file:
 ```groovy
-   <com.nguyencse.URLEmbeddedView
+   <storm.URLEmbeddedView
         android:id="@+id/uev"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

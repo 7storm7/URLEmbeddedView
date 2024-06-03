@@ -1,8 +1,7 @@
-package com.nguyencse;
+package com.storm;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.nguyencse.urlembeddedview.R;
 import com.squareup.picasso.Picasso;
+import com.storm.urlembeddedview.R;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class URLEmbeddedView extends ConstraintLayout {
 

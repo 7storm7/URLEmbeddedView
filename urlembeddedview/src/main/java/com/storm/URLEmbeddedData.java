@@ -1,4 +1,4 @@
-package com.nguyencse;
+package com.storm;
 
 public class URLEmbeddedData {
     private String host;

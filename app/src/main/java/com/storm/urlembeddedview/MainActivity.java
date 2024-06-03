@@ -1,14 +1,15 @@
-package com.nguyencse.urlembeddedview;
+package com.storm.urlembeddedview;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.nguyencse.URLConstants;
-import com.nguyencse.URLEmbeddedData;
-import com.nguyencse.URLEmbeddedView;
+import com.storm.URLConstants;
+import com.storm.URLEmbeddedData;
+import com.storm.URLEmbeddedView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
