@@ -12,7 +12,7 @@ import java.net.URL;
 
 public class URLEmbeddedTask extends AsyncTask<String, Void, URLEmbeddedData> {
 
-    private OnLoadURLListener listener;
+    private final OnLoadURLListener listener;
 
     public URLEmbeddedTask(OnLoadURLListener listener) {
         this.listener = listener;
