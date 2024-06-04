@@ -1,6 +1,28 @@
 apply plugin:'com.android.library'
 apply plugin: 'maven-publish'
 
+// Place the version of your library here
+def getVersionName = { ->
+    return "1.0.3"
+}
+
+// Add the name of your library here
+def getArtifactId = { ->
+    return "urlembeddedview"
+}
+
+// Add the group ID of your library here
+def getGroupId = { ->
+    return "com.storm"
+}
+
+// Prepare URL of maven package.
+// Replace 'mohitrajput987' with your github repo's username or organization name.
+// Replace 'analytics-sdk-android' with the name of github repo
+def getGitHubUrl = { ->
+    return "https://maven.pkg.github.com/7storm7/urlembeddedview"
+}
+
 android {
     namespace = "com.storm.urlembeddedview"
     compileSdk = 34
@@ -19,13 +41,23 @@ android {
     }
 
     publishing {
+        publications {
+            bar(MavenPublication) {
+                groupId getGroupId()
+                artifactId getArtifactId()
+                version getVersionName()
+                // Place the path of your artifact here
+                artifact("$buildDir/libs/${getArtifactId()}.jar")
+            }
+        }
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = "https://maven.pkg.github.com/7storm7/URLEmbeddedView"
+    
+                url = uri(getGitHubUrl())
                 credentials {
-                    username = System.getenv("GITHUB_ACTOR")
-                    password = System.getenv("GITHUB_TOKEN")
+                    username = System.getenv("GPR_USER")
+                    password = System.getenv("GPR_KEY")
                 }
             }
         }
