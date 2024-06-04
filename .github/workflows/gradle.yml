@@ -7,11 +7,11 @@
 
 name: Java CI with Gradle
 
-on:
+on: 
   push:
-    branches: [ "master" ]
     tags:
-    - '*'    
+    - '*'
+   
   pull_request:
     branches: [ "master" ]
 
@@ -71,6 +71,8 @@ jobs:
   publish:
     name: Release Library
     runs-on: ubuntu-latest
+
+
 
     steps:
       - uses: actions/checkout@v1
