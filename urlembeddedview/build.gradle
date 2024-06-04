@@ -56,8 +56,8 @@ android {
     
                 url = uri(getGitHubUrl())
                 credentials {
-                    username = System.getenv("GPR_USER")
-                    password = System.getenv("GPR_KEY")
+                    username System.getenv("GPR_USER")
+                    password System.getenv("GPR_KEY")
                 }
             }
         }
