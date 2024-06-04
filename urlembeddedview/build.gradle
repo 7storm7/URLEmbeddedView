@@ -29,8 +29,6 @@ android {
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -39,26 +37,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
 
-    publishing {
-        publications {
-            bar(MavenPublication) {
-                groupId getGroupId()
-                artifactId getArtifactId()
-                version getVersionName()
-                // Place the path of your artifact here
-                artifact("$buildDir/libs/${getArtifactId()}.jar")
-            }
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId "com.storm"
+            artifactId "urlembeddedview"
+            version "1.0.3"
+            // Place the path of your artifact here
+            artifact("$buildDir/libs/${"urlembeddedview"}.jar")
         }
-        repositories {
-            maven {
-                name = "GitHubPackages"
-    
-                url = uri(getGitHubUrl())
-                credentials {
-                    username System.getenv("GPR_USER")
-                    password System.getenv("GPR_KEY")
-                }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+
+            url = uri(getGitHubUrl())
+            credentials {
+                username System.getenv("GPR_USER")
+                password System.getenv("GPR_KEY")
             }
         }
     }
