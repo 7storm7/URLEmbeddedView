@@ -45,8 +45,12 @@ publishing {
             groupId "com.storm"
             artifactId "urlembeddedview"
             version "1.0.3"
+//            afterEvaluate {
+//                from(components["release"])
+//            }
+            
             // Place the path of your artifact here
-            artifact("$buildDir/libs/${"urlembeddedview"}.jar")
+            //artifact("$buildDir/libs/${"urlembeddedview"}.jar")
         }
     }
     repositories {
