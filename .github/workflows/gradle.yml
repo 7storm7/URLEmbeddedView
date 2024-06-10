@@ -108,13 +108,13 @@ jobs:
           USERNAME: ${{ github.actor }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Release ✅
-        id: create_release
-        uses: ncipollo/release-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          draft: true
-          prerelease: false
+#      - name: Create Release ✅
+#        id: create_release
+#        uses: ncipollo/release-action@v1
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          draft: true
+#          prerelease: false
 
       - name: Upload Library AAR 🗳
         uses: softprops/action-gh-release@v2
