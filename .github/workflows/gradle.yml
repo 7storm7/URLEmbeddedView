@@ -97,11 +97,13 @@ jobs:
       - name: Build AAR ⚙️🛠
         run: bash ./gradlew :urlembeddedview:assemble
 
-      - name: Publish to GitHub Package Registry 🚀
-        run: bash ./gradlew :urlembeddedview:publish
+      - name: Publish to GitHub Packages
+        uses: gradle/gradle-build-action@v2.4.2
+        with:
+          arguments: publish
         env:
-          GPR_USER: ${{ github.actor }}
-          GPR_KEY: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.actor }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release ✅
         id: create_release
