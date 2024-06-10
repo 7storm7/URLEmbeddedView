@@ -101,13 +101,13 @@ jobs:
         run: bash ./gradlew :urlembeddedview:publish
         env:
           GPR_USER: ${{ github.actor }}
-          GPR_KEY: ${{ secrets.GP_PASS }}
+          GPR_KEY: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release ✅
         id: create_release
         uses: ncipollo/release-action@v1
         env:
-          GPR_KEY: ${{ secrets.GP_PASS }}
+          GPR_KEY: ${{ secrets.GITHUB_TOKEN }}
         with:
           draft: true
           prerelease: false
@@ -115,4 +115,4 @@ jobs:
       - name: Upload Library AAR 🗳
         uses: softprops/action-gh-release@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.GP_PASS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
